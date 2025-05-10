@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture Summarizer | Frenzy UI</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@32,400,0,0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="videos/desktop-video.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+
+    <div class="container">
+      <header class="app-header">
+        <h1 class="heading">AI-Powered Lecture Summarizer</h1>
+        <h4 class="sub-heading">Summarize lectures from Mic, Files, or YouTube</h4>
+      </header>
+
+      <ul class="suggestions">
+        <li class="suggestions-item">
+          <p class="text">Use mic to summarize in real-time.</p>
+          <span class="icon material-symbols-rounded">mic</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Upload an audio or video file.</p>
+          <span class="icon material-symbols-rounded">upload</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Paste a YouTube link for summary.</p>
+          <span class="icon material-symbols-rounded">smart_display</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Export summary in PDF, Word, or JSON.</p>
+          <span class="icon material-symbols-rounded">download</span>
+        </li>
+      </ul>
+
+      <div class="chats-container"></div>
+
+      <div class="prompt-container">
+        <div class="prompt-wrapper">
+          <form action="#" class="prompt-form">
+            <select id="input-type" class="prompt-input" required>
+              <option value="">Select input source</option>
+              <option value="mic">🎙️ Mic</option>
+              <option value="file">📂 File</option>
+              <option value="youtube">📺 YouTube</option>
+            </select>
+
+            <input type="text" id="youtube-link" class="prompt-input" placeholder="Paste YouTube URL" style="display:none;" />
+
+            <input type="file" id="audio-file" accept="audio/*,video/*" style="display:none;" />
+
+            <select id="export-format" class="prompt-input" required>
+              <option value="pdf">Export as PDF</option>
+              <option value="word">Export as Word</option>
+              <option value="json">Export as JSON</option>
+            </select>
+
+            <div class="prompt-actions">
+              <button id="process-btn" type="submit" class="material-symbols-rounded">play_circle</button>
+            </div>
+          </form>
+
+          <button id="theme-toggle-btn" class="material-symbols-rounded">light_mode</button>
+          <button id="delete-chats-btn" class="material-symbols-rounded">delete</button>
+        </div>
+
+        <p class="disclaimer-text">This demo works fully in-browser with limited AI logic.</p>
+        <p class="disclaimer-text">© Issac Moses | Frenzy 1.1 UI</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
